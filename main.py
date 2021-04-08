@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 import time
 
 
-host = 'http://128.199.29.189/'
+host = 'http://_hostname_' # change hostname 
 slug_login = 'index.php/login/verifylogin/'
 slug_insert_user = 'index.php/user/insert_user/'
 slug_remove_user = 'index.php/user/remove_user/'
 
-username = 'admin@example.com'
+username = 'admin@example.com' # change username & password
 password = 'admin'
 
 session = requests.Session()
@@ -25,6 +25,10 @@ resp = session.post(host+slug_login, data=login_data)
 # print(resp.text)
 
 
+######################################
+#Inserting User
+######################################
+
 # for i in range(101, 10000):
 #     insert_user_data = {
 #         'email': 'bot'+str(i)+'@bot.com',
@@ -40,6 +44,10 @@ resp = session.post(host+slug_login, data=login_data)
 #     print(insert_user_data['email'])
 
 
-for i in range(17, 50):
+
+######################################
+#Deleting User
+######################################
+for i in range(17, 50): 
     resp = session.get(host+slug_remove_user+str(i))
     print(i)
