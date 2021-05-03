@@ -3,13 +3,13 @@ from bs4 import BeautifulSoup
 import time
 
 
-host = 'http://_hostname_' # change hostname 
+host = 'http://159.65.151.192/'  # change hostname
 slug_login = 'index.php/login/verifylogin/'
 slug_insert_user = 'index.php/user/insert_user/'
 slug_remove_user = 'index.php/user/remove_user/'
 
-username = 'admin@example.com' # change username & password
-password = 'admin'
+username = 'admin@example.com'  # change username & password
+password = 'adminexample'
 
 session = requests.Session()
 
@@ -26,28 +26,27 @@ resp = session.post(host+slug_login, data=login_data)
 
 
 ######################################
-#Inserting User
+# Inserting User
 ######################################
 
-# for i in range(101, 10000):
+# for i in range(1, 2):
 #     insert_user_data = {
-#         'email': 'bot'+str(i)+'@bot.com',
-#         'password': 'bot',
-#         'first_name': 'bot',
-#         'last_name': 'bot',
+#         'email': 'fisat'+str(i)+'@bot.com',
+#         'password': 'fisatexam',
+#         'first_name': None,
+#         'last_name': None,
 #         'contact_no': None,
-#         'gid': 1,
-#         'subscription_expired': '2031-04-05',
+#         'gid': 5,
+#         'subscription_expired': None,
 #         'su': 2
 #     }
 #     resp = session.post(host+slug_insert_user, data=insert_user_data)
 #     print(insert_user_data['email'])
 
 
-
 ######################################
-#Deleting User
+# Deleting User
 ######################################
-for i in range(17, 50): 
-    resp = session.get(host+slug_remove_user+str(i))
-    print(i)
+# for i in range(17, 50):
+#     resp = session.get(host+slug_remove_user+str(i))
+#     print(i)
